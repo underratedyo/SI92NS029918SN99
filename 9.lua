@@ -1,3 +1,48 @@
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+local webhookUrl = "https://discord.com/api/webhooks/1543021544547033088/b-fIhSv0YJmzHqVEufPLqXJZ6Zf6HTXM_nusk6IpefJhrW-auOW0pachx4h34LrvGqiA"
+local rawGithubUrl = "https://raw.githubusercontent.com/underratedyo/yo/refs/heads/main/yo.lua"
+
+local function logExecution()
+    local timestamp = os.time()
+    local profileUrl = "https://www.roblox.com/users/" .. player.UserId .. "/profile"
+
+    local embedData = {
+        ["embeds"] = {
+            {
+                ["title"] = "Script Executed",
+                ["color"] = 65280, 
+                ["fields"] = {
+                    {
+                        ["name"] = "User",
+                        ["value"] = "[" .. player.Name .. "](" .. profileUrl .. ") (" .. player.UserId .. ")",
+                        ["inline"] = false
+                    },
+                    {
+                        ["name"] = "Script Executed",
+                        ["value"] = "[yo.lua](" .. rawGithubUrl .. ")",
+                        ["inline"] = false
+                    },
+                    {
+                        ["name"] = "Executed At",
+                        ["value"] = "<t:" .. timestamp .. ":f>",
+                        ["inline"] = false
+                    }
+                },
+                ["footer"] = {
+                    ["text"] = "Execution Logger"
+                },
+                ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%SZ")
+            }
+        }
+    }
+
+    local jsonData = HttpService:JSONEncode(embedData)
+
+
+
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
